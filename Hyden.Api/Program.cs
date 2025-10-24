@@ -1,7 +1,14 @@
+
+using Hyden.Api.Infrastructure.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<HydenDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
@@ -11,18 +18,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapGet("/", () => "API Hyden está rodando 🚀");
-
-app.MapGet("/planta/{id}", (int id) =>
-{
-    var planta = new { Id = id, Nome = "Tomate", UmidadeIdeal = 60 };
-    return Results.Ok(planta);
-});
-
-app.MapPost("/planta", (dynamic planta) =>
-{
-
-    return Results.Created($"/planta/{planta.id}", planta);
-});
+//app.UseHttpsRedirection();
 
 app.Run();
