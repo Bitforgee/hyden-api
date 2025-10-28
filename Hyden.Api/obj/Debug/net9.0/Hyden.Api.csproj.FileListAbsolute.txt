@@ -43,6 +43,7 @@ D:\Projetos\Web\hyden-api\Hyden.Api\bin\Debug\net9.0\Hyden.Api.deps.json
 D:\Projetos\Web\hyden-api\Hyden.Api\bin\Debug\net9.0\Hyden.Api.runtimeconfig.json
 D:\Projetos\Web\hyden-api\Hyden.Api\bin\Debug\net9.0\Hyden.Api.dll
 D:\Projetos\Web\hyden-api\Hyden.Api\bin\Debug\net9.0\Hyden.Api.pdb
+D:\Projetos\Web\hyden-api\Hyden.Api\bin\Debug\net9.0\Flunt.dll
 D:\Projetos\Web\hyden-api\Hyden.Api\bin\Debug\net9.0\Humanizer.dll
 D:\Projetos\Web\hyden-api\Hyden.Api\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
 D:\Projetos\Web\hyden-api\Hyden.Api\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
