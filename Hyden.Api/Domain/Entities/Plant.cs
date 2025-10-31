@@ -14,4 +14,6 @@ public sealed class Plant : Notifiable<Notification>
     public DateTime CreatedAt { get; private set; }
     public DateTime? UpdatedAt { get; private set; }
     private Plant() { }
+
+    
 }

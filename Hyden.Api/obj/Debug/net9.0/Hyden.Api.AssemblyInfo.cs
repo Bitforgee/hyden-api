@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hyden.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c995744e3e9b2cfc39385b7df18e23b6eb6408e9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a87e0d6cd1966b993737668ac96ef0de67503821")]
 [assembly: System.Reflection.AssemblyProductAttribute("Hyden.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hyden.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
