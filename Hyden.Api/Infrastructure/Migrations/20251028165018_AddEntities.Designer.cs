@@ -62,7 +62,7 @@ namespace Hyden.Api.Infrastructure.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("PlantSpecId")
+                    b.Property<Guid>("PlantSpecificationId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("RegistrationDate")
@@ -73,7 +73,7 @@ namespace Hyden.Api.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PlantSpecId");
+                    b.HasIndex("PlantSpecificationId");
 
                     b.HasIndex("SmartPotId");
 
@@ -229,7 +229,7 @@ namespace Hyden.Api.Infrastructure.Migrations
                 {
                     b.HasOne("Hyden.Api.Domain.Entities.PlantSpec", "PlantSpec")
                         .WithMany()
-                        .HasForeignKey("PlantSpecId")
+                        .HasForeignKey("PlantSpecificationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

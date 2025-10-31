@@ -94,14 +94,14 @@ namespace Hyden.Api.Infrastructure.Migrations
                     Name = table.Column<string>(type: "text", nullable: true),
                     RegistrationDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     SmartPotId = table.Column<Guid>(type: "uuid", nullable: false),
-                    PlantSpecId = table.Column<Guid>(type: "uuid", nullable: false)
+                    PlantSpecificationId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Plants", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Plants_PlantSpecs_PlantSpecId",
-                        column: x => x.PlantSpecId,
+                        name: "FK_Plants_PlantSpecs_PlantSpecificationId",
+                        column: x => x.PlantSpecificationId,
                         principalTable: "PlantSpecs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -143,9 +143,9 @@ namespace Hyden.Api.Infrastructure.Migrations
                 column: "SmartPotId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Plants_PlantSpecId",
+                name: "IX_Plants_PlantSpecificationId",
                 table: "Plants",
-                column: "PlantSpecId");
+                column: "PlantSpecificationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Plants_SmartPotId",

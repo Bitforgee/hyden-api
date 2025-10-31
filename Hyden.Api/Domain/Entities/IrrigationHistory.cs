@@ -11,5 +11,7 @@ public sealed class IrrigationHistory : Notifiable<Notification>
     public double WaterAmount { get; private set; }
     public double MoistureBefore { get; private set; }
     public double MoistureAfter { get; private set; }
+    public DateTime CreatedAt { get; private set; }
+    public DateTime? UpdatedAt { get; private set; }
     private IrrigationHistory() { }
 }
