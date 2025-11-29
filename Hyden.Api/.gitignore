@@ -1,0 +1,174 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# obj directory and all contents (including sourcelink files)
+obj/**
+
+# bin directory and all contents
+bin/**
+
+# Visual Studio cache/options
+.vs/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Rider
+.idea/
+*.sln.iml
+*.swp
+*.swo
+*~
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider-specific files
+.idea/
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/aws.xml
+.idea/**/contentModel.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/artifacts
+
+# NuGet
+.nuget/
+*.nupkg
+*.nuspec
+*.snupkg
+
+# NuGet Restore files
+project.lock.json
+project.assets.json
+nuget.restore.targets
+
+# dotnet user-secrets
+.dotnet/user-secrets/
+user_secrets.json
+secrets.json
+
+# Entity Framework
+*.edmx
+*.edmx.diagram
+
+# Resharper is a .NET coding add-in
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Test Results
+TestResults/
+*.trx
+
+# Local development database files
+*.db
+*.db-shm
+*.db-wal
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+
+# Application Insights
+ApplicationInsights.config
+bin/
+obj/
+
+# Build logs
+*.log
+
+# DotCover
+.dotCover/
+
+# OpenCover
+opencoverage.xml
+OpenCover.xml
+
+# Coverage reports
+coverage/
+*.coverage
+*.coveragexml
+
+# Backup & temp files
+*.bak
+*.tmp
+*.temp
+*~
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Runtime files
+launchSettings.json.user
+
+# IIS/IISExpress
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+
+# SQL Server
+*.mdf
+*.ldf
+*.ndf
+
+# SSL certificates (if stored locally)
+*.pfx
+*.cer
+*.pem
+*.key
+
+# Docker compose override files
+docker-compose.override.yml
+
+# Python egg info
+*.egg-info/
+__pycache__/
+
+# Package manager lock files (if using nuget lock feature)
+packages.lock.json
+
+# AppSettings environment-specific files
+appsettings.*.json
+!appsettings.json
+!appsettings.Development.json
+!appsettings.Production.json
+
+# Misc
+.editorconfig.user
