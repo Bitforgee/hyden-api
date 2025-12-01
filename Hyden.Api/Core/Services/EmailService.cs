@@ -14,38 +14,43 @@ public class EmailService : IEmailService
     private readonly string _fromEmail;
     private readonly string _fromName;
 
-    public EmailService(IOptions<MailerSendSettings> options)
+    public EmailService(IOptions<MailjetSettings> options)
     {
         var settings = options.Value;
         _fromEmail = settings.FromEmail;
         _fromName = settings.FromName;
+        
         _httpClient = new HttpClient
         {
-            BaseAddress = new Uri("https://api.mailersend.com/v1/")
+            BaseAddress = new Uri("https://api.mailjet.com/v3.1/")
         };
-        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", settings.ApiKey);
+        
+        var credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes($"{settings.ApiKey}:{settings.ApiSecret}"));
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", credentials);
     }
 
     public async Task<bool> SendEmailAsync(string toEmail, string toName, string subject, string htmlContent)
     {
         try
         {
-            var request = new MailerSendDto
+            var request = new MailjetRequestDto
             {
-                From = new MailerSendEmailDto { Email = _fromEmail, Name = _fromName },
-                To = [new MailerSendEmailDto { Email = toEmail, Name = toName }],
-                Subject = subject,
-                Html = htmlContent
+                Messages =
+                [
+                    new MailjetMessageDto
+                    {
+                        From = new MailjetEmailDto { Email = _fromEmail, Name = _fromName },
+                        To = [new MailjetEmailDto { Email = toEmail, Name = toName }],
+                        Subject = subject,
+                        TextPart = "Seu e-mail contém conteúdo em HTML. Caso não visualize corretamente, utilize um cliente compatível.",
+                        HTMLPart = htmlContent
+                    }
+                ]
             };
 
-            var json = JsonSerializer.Serialize(request, new JsonSerializerOptions
-            {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
-            });
-
+            var json = JsonSerializer.Serialize(request);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync("email", content);
+            var response = await _httpClient.PostAsync("send", content);
 
             return response.IsSuccessStatusCode;
         }

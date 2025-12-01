@@ -127,7 +127,7 @@ public static class BuilderExtension
         builder.Services.Configure<CryptoSettings>(builder.Configuration.GetSection("Crypto"));
         builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
         builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("Cloudinary"));
-        builder.Services.Configure<MailerSendSettings>(builder.Configuration.GetSection("MailerSend"));
+        builder.Services.Configure<MailjetSettings>(builder.Configuration.GetSection("Mailjet"));
 
         // Registrar serviços
         builder.Services.AddScoped<ICryptoService, CryptoService>();

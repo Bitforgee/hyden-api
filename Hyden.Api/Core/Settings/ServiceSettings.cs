@@ -19,9 +19,10 @@ public class CloudinarySettings
     public string ApiSecret { get; set; } = string.Empty;
 }
 
-public class MailerSendSettings
+public class MailjetSettings
 {
     public string ApiKey { get; set; } = string.Empty;
+    public string ApiSecret { get; set; } = string.Empty;
     public string FromEmail { get; set; } = "noreply@hyden.com";
     public string FromName { get; set; } = "Hyden";
 }
