@@ -16,7 +16,7 @@ public class CreateUserEndpoint : IEndpoint
        .WithDescription("Cria uma novo usuário")
        .WithOrder(1)
        .Produces<Response<User?>>()
-       .RequireAuthorization();
+       .AllowAnonymous();
 
 
     private static async Task<IResult> HandleAsync(

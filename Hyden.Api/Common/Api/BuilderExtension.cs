@@ -2,6 +2,7 @@
 using Hyden.Api.Core.Handlers;
 using Hyden.Api.Core.Interfaces.Handlers;
 using Hyden.Api.Core.Interfaces.Services;
+using Hyden.Api.Core.Models;
 using Hyden.Api.Core.Services;
 using Hyden.Api.Core.Settings;
 using Hyden.Api.Data;
@@ -121,7 +122,7 @@ public static class BuilderExtension
             ));
     }
 
-    public static void AddServices(this WebApplicationBuilder builder)
+    public static void  AddServices(this WebApplicationBuilder builder)
     {
         // Configurar Options Pattern
         builder.Services.Configure<CryptoSettings>(builder.Configuration.GetSection("Crypto"));
@@ -136,5 +137,7 @@ public static class BuilderExtension
         builder.Services.AddScoped<IEmailService, EmailService>();
         builder.Services.AddTransient<IUserHandler, UserHandler>();
         builder.Services.AddTransient<IAuthHandler, AuthHandler>();
+        builder.Services.AddTransient<IUserNotificationHandler, UserNotificationHandler>();
+        builder.Services.AddTransient<IIrrigationHistoryhandler, IrrigationHistoryhandler>();
     }
 }

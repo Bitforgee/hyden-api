@@ -7,6 +7,7 @@ public class HydenDbContext(DbContextOptions<HydenDbContext> options) : DbContex
 {
     public DbSet<User> Users { get; init; } = null!;
     public DbSet<SmartPot> SmartPots { get; init; } = null!;
+    public DbSet<UserSmartPot> UserSmartPots { get; init; } = null!;
     public DbSet<PlantSpecification> PlantSpecs { get; init; } = null!;
     public DbSet<Plant> Plants { get; init; } = null!;
     public DbSet<IrrigationHistory> IrrigationHistories { get; init; } = null!;

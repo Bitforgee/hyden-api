@@ -9,7 +9,7 @@ namespace Hyden.Api.Endpoints.Users;
 public class GetUserEndpoint : IEndpoint
 {
     public static void Map(IEndpointRouteBuilder app)
-        => app.MapGet("/{UserId}", HandleAsync)
+        => app.MapGet("/{UserId:guid}", HandleAsync)
             .WithName("Users: Get by ID")
             .WithSummary("Obtém informações de um usuário")
             .WithDescription("Retorna os dados de um usuário específico pelo ID")

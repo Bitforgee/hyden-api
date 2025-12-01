@@ -6,7 +6,6 @@ using Hyden.Api.Core.Requests.Users;
 using Hyden.Api.Core.Responses;
 using Hyden.Api.Data;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
 
 namespace Hyden.Api.Core.Handlers;
 

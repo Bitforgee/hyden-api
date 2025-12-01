@@ -1,10 +1,8 @@
 using Hyden.Api.Common.Api;
 using Hyden.Api.Core.Dtos;
 using Hyden.Api.Core.Interfaces.Handlers;
-using Hyden.Api.Core.Interfaces.Services;
 using Hyden.Api.Core.Requests.Users;
 using Hyden.Api.Core.Responses;
-using System.Security.Claims;
 
 namespace Hyden.Api.Endpoints.Users;
 
