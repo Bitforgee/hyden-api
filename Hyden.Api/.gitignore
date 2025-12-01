@@ -1,4 +1,6 @@
-# Build results
+# =========================
+# Build Results
+# =========================
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -14,116 +16,95 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-# obj directory and all contents (including sourcelink files)
-obj/**
-
-# bin directory and all contents
-bin/**
-
 # BuildHost directories (from Roslyn analyzers)
 BuildHost/
 BuildHost-**/
 **/BuildHost/
 
-# Visual Studio cache/options
+# =========================
+# IDE / Editors
+# =========================
+
+# Visual Studio
 .vs/
-
-# Visual Studio Code
-.vscode/
-*.code-workspace
-
-# Rider
-.idea/
-*.sln.iml
-*.swp
-*.swo
-*~
-
-# User-specific files
 *.rsuser
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# Rider-specific files
-.idea/
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries
-.idea/**/shelf
-.idea/**/aws.xml
-.idea/**/contentModel.xml
-.idea/modules.xml
-.idea/vcs.xml
-.idea/inspectionProfiles/profiles_settings.xml
-.idea/artifacts
-
-# NuGet
-.nuget/
-*.nupkg
-*.nuspec
-*.snupkg
-
-# NuGet Restore files
-project.lock.json
-project.assets.json
-nuget.restore.targets
-
-# dotnet user-secrets
-.dotnet/user-secrets/
-user_secrets.json
-secrets.json
-
-# Entity Framework
-*.edmx
-*.edmx.diagram
-
-# Resharper is a .NET coding add-in
-_ReSharper*/
-*.[Rr]e[Ss]harper
-*.DotSettings.user
+# Visual Studio Code
+.vscode/
+*.code-workspace
 
 # JetBrains Rider
 .idea/
 *.sln.iml
 
-# Test Results
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# =========================
+# NuGet
+# =========================
+.nuget/
+*.nupkg
+*.nuspec
+*.snupkg
+project.lock.json
+packages.lock.json
+
+# =========================
+# .NET / Entity Framework
+# =========================
+*.edmx
+*.edmx.diagram
+migrations.sql
+
+# =========================
+# Secrets & Sensitive Files
+# =========================
+.env
+.env.*
+*.env
+secrets.json
+user_secrets.json
+.dotnet/user-secrets/
+
+# SSL certificates
+*.pfx
+*.cer
+*.pem
+*.key
+
+# =========================
+# Testing & Coverage
+# =========================
 TestResults/
 *.trx
-
-# Local development database files
-*.db
-*.db-shm
-*.db-wal
-
-# Local environment files
-.env
-.env.local
-.env.*.local
-
-# Application Insights
-ApplicationInsights.config
-bin/
-obj/
-
-# Build logs
-*.log
-
-# DotCover
 .dotCover/
-
-# OpenCover
-opencoverage.xml
-OpenCover.xml
-
-# Coverage reports
 coverage/
 *.coverage
 *.coveragexml
+opencoverage.xml
+OpenCover.xml
 
-# Backup & temp files
+# =========================
+# Database Files
+# =========================
+*.db
+*.db-shm
+*.db-wal
+*.mdf
+*.ldf
+*.ndf
+
+# =========================
+# Logs & Temp Files
+# =========================
+*.log
 *.bak
 *.tmp
 *.temp
@@ -131,49 +112,32 @@ coverage/
 *.swp
 *.swo
 
-# OS files
+# =========================
+# OS Generated Files
+# =========================
 .DS_Store
 Thumbs.db
 ehthumbs.db
 desktop.ini
 
-# Runtime files
-launchSettings.json.user
-
-# IIS/IISExpress
+# =========================
+# IIS / Application Insights
+# =========================
+ApplicationInsights.config
 *.aps
 *.ncb
 *.opensdf
 *.sdf
 *.cachefile
 *.VC.db
+launchSettings.json.user
 
-# SQL Server
-*.mdf
-*.ldf
-*.ndf
-
-# SSL certificates (if stored locally)
-*.pfx
-*.cer
-*.pem
-*.key
-
-# Docker compose override files
+# =========================
+# Docker
+# =========================
 docker-compose.override.yml
 
-# Python egg info
-*.egg-info/
-__pycache__/
-
-# Package manager lock files (if using nuget lock feature)
-packages.lock.json
-
-# AppSettings environment-specific files
-appsettings.*.json
-!appsettings.json
-!appsettings.Development.json
-!appsettings.Production.json
-
+# =========================
 # Misc
+# =========================
 .editorconfig.user

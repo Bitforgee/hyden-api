@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
-using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Text;
 
 namespace Hyden.Api.Common.Api;
@@ -36,7 +35,7 @@ public static class BuilderExtension
 
             x.SwaggerDoc("v1", new OpenApiInfo
             {
-                Title = "JWTToken_Auth_API",
+                Title = "Hyden API",
                 Version = "v1"
             });
             
