@@ -25,6 +25,11 @@ public class SmartPotMapping : IEntityTypeConfiguration<SmartPot>
             .HasColumnType("character varying(120)")
             .HasMaxLength(120);
 
+        builder.Property(s => s.SerialNumber)
+            .HasColumnName("SERIAL_NUMBER")
+            .HasColumnType("character varying(100)")
+            .IsRequired();
+
         builder.Property(s => s.ConnectionStatus)
             .HasColumnName("CONNECTION_STATUS")
             .HasColumnType("boolean")

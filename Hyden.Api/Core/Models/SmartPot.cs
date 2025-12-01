@@ -7,6 +7,7 @@ public sealed class SmartPot
     public Guid Id { get; private set; }
     public string QrCode { get; private set; }
     public string Location { get; private set; }
+    public string SerialNumber { get; private set; }
     public bool ConnectionStatus { get; private set; }
     public double ReservoirLevel { get; private set; }
     public double LastSoilMoisture { get; private set; }
@@ -15,11 +16,12 @@ public sealed class SmartPot
     public DateTime? UpdatedAt { get; private set; }
     private SmartPot() { }
 
-    public SmartPot(string qrCode, string location)
+    public SmartPot(string qrCode, string location, string serialNumber)
     {
         Id = Guid.NewGuid();
         QrCode = qrCode;
         Location = location;
+        SerialNumber = serialNumber;
         ConnectionStatus = false;
         ReservoirLevel = 0;
         LastSoilMoisture = 0;
