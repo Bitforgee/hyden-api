@@ -1,41 +1,22 @@
-using Hyden.Api.Infrastructure.Context;
-using Microsoft.EntityFrameworkCore;
-using Scalar.AspNetCore;
+using Hyden.Api;
+using Hyden.Api.Common.Api;
+using Hyden.Api.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddOpenApi();
-builder.Services.AddEndpointsApiExplorer();
-
-builder.Services.AddDbContext<HydenDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
-);
+builder.AddConfiguration();
+builder.AddSecurity();
+builder.AddDataContexts();
+builder.AddCrossOrigin();
+builder.AddDocumentation();
+builder.AddServices();
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-    app.MapScalarApiReference(
-        "/docs",
-        options =>
-        {
-            options
-                .WithTitle("Hyden API")
-                .AddDocument("v1", "Hyden API")
-                .WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient)
-                .WithClassicLayout()
-                .ForceDarkMode()
-                .HideSearch()
-                .ShowOperationId()
-                .ExpandAllTags()
-                .SortTagsAlphabetically()
-                .SortOperationsByMethod()
-                .PreserveSchemaPropertyOrder();
-        }
-    );
-}
+    app.ConfigureDevEnvironment();
 
-//app.UseHttpsRedirection();
+app.UseSecurity();
+app.UseCors(ApiConfiguration.CorsPolicyName);
+app.MapEndpoints();
 
 app.Run();

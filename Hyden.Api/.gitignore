@@ -20,6 +20,11 @@ obj/**
 # bin directory and all contents
 bin/**
 
+# BuildHost directories (from Roslyn analyzers)
+BuildHost/
+BuildHost-**/
+**/BuildHost/
+
 # Visual Studio cache/options
 .vs/
 
